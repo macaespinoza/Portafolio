@@ -1,0 +1,779 @@
+/* Aquí apliqué las variables de color, para poder modificarlas fácilmente a futuro */
+:root {
+    --morado: #3d1650ff;
+    --rosado: #fc789eff;
+    --verde-bosque: #083e35ff;
+    --turquesa: #74ecaaff;
+    --amarillo: #eefc88ff;
+    --blanco: #fcfdf3ff;
+    --negro: #161616ff;
+}
+
+body {
+    background: var(--morado);
+    font-family: "Raleway", Arial, Helvetica, sans-serif;
+}
+
+#titulo-maca {
+    font-family: "Abril Fatface", serif;
+    color: var(--turquesa);
+    font-size: 70px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 0.8;
+}
+
+/* Aplicación de gradientes CSS, aprendí a entenderlas gracias a https://cssgradient.io/ */
+
+.navbar-maca {
+    background: linear-gradient(to right, #36bb72 0%, #74ecaa 50%);
+    background-color: var(--turquesa);
+    border-bottom: 4px solid var(--blanco);
+
+}
+
+.navbar-maca a {
+    font-family: "Anton", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: var(--amarillo);
+    font-size: 2rem;
+    text-shadow:
+        1px 1px 0px #fc789eff,
+        2px 2px 0px #fc789eff,
+        3px 3px 0px #fc789eff,
+        4px 4px 0px #fc789eff,
+        5px 5px 5px #07110f33;
+}
+
+
+/* Wrapper para separar imagen y texto */
+.hero-wrapper {
+    position: relative;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -50px;
+}
+
+.hero-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../img/fondo_hero05.png');
+    background-size: 800px;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 2;
+    font-size: 5rem;
+    color: var(--blanco);
+    text-shadow:
+        1px 1px 0px #929292ff,
+        2px 2px 0px #929292ff,
+        3px 3px 0px #929292ff,
+        4px 4px 0px #929292ff,
+        5px 5px 0px #929292ff,
+        6px 6px 0px #929292ff,
+        10px 10px 10px #10110199;
+    font-family: "Abril Fatface", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    line-height: 0.9;
+}
+
+/* Animación interactiva para el nombre */
+.hero-nombre {
+    display: inline-block;
+    cursor: default;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hero-nombre:hover {
+    transform: scale(1.05) rotate(-1deg);
+    text-shadow:
+        1px 1px 0px var(--verde-bosque),
+        2px 2px 0px var(--verde-bosque),
+        3px 3px 0px var(--verde-bosque),
+        4px 4px 0px var(--verde-bosque),
+        5px 5px 0px var(--verde-bosque),
+        6px 6px 0px var(--verde-bosque),
+        12px 12px 15px #10110166;
+}
+
+.subtitulo {
+    margin-top: 0.9rem;
+    font-family: "Anton", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: default;
+}
+
+.subtitulo:hover {
+    transform: scale(1.08);
+    letter-spacing: 3px;
+    text-shadow:
+        1px 1px 0px var(--turquesa),
+        2px 2px 0px var(--turquesa),
+        3px 3px 0px var(--turquesa),
+        5px 5px 10px #10110155;
+}
+
+/* Botón de cambiar color discreto */
+.btn-color-toggle {
+    background: rgba(255, 255, 255, 0.3);
+    border: 2px solid var(--blanco);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    color: var(--verde-bosque);
+    font-size: 1rem;
+}
+
+.btn-color-toggle:hover {
+    background: rgba(255, 255, 255, 0.6);
+    transform: rotate(15deg) scale(1.1);
+}
+
+.btn-color-toggle:active {
+    transform: scale(0.95);
+}
+
+.hero-box button {
+    background-color: #fcfdf355;
+    color: #4e4e4e90;
+    border-width: 1px;
+    border-color: var(--blanco);
+    font-family: "Raleway", sans-serif;
+}
+
+.hero-box button:hover {
+    background-color: #fcfdf377;
+    color: #4e4e4e90;
+    border-width: 1px;
+    border-color: var(--blanco);
+    font-family: "Raleway", sans-serif;
+}
+
+.hero-box button:active,
+.hero-box button:focus {
+    background-color: #fcfdf399 !important;
+    color: #4e4e4e90;
+    border-width: 1px;
+    border-color: var(--blanco);
+    font-family: "Raleway", sans-serif;
+}
+
+
+
+.perfil-container {
+    flex: 2;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-top: -30px;
+}
+
+.cover {
+    background: linear-gradient(to right, #36bb72 0%, #74ecaa 50%);
+    height: 80px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    margin: -20px -20px 40px -20px;
+}
+
+/* Aquí agrupé algunas clases para ahorrar código */
+
+.profile-card h1,
+.habilidades h1 {
+    font-family: "Anton", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-left: 60px;
+    color: var(--rosado);
+    font-size: 2rem;
+    text-shadow:
+        1px 1px 0px #083e35ff,
+        2px 2px 0px #083e35ff,
+        3px 3px 0px #083e35ff,
+        4px 4px 0px #083e35ff,
+        5px 5px 5px #07110f33;
+}
+
+.profile-card h4,
+.habilidades h4 {
+    font-family: "Anton", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: var(--verde-bosque);
+    font-size: 1.4rem;
+    margin-left: 60px;
+    text-shadow:
+        1px 1px 0px #74ecaaff,
+        2px 2px 0px #74ecaaff,
+        3px 3px 0px #74ecaaff;
+
+}
+
+.profile-card p,
+.habilidades p {
+    font-family: "Raleway", Arial, Helvetica, sans-serif;
+    margin-left: 60px;
+    margin-right: 60px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #2e2e2e;
+    /* text-shadow: #dbdbdb 2px 2px 2px; */
+}
+
+.avatar {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 4px solid #f5f5f5;
+    object-fit: cover;
+    margin-top: -200px;
+    margin-bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+.profile-card,
+.habilidades {
+    background-image:
+        linear-gradient(135deg, #f1f1f1 25%, transparent 25%),
+        linear-gradient(225deg, #f1f1f1 25%, transparent 25%),
+        linear-gradient(45deg, #f1f1f1 25%, transparent 25%),
+        linear-gradient(315deg, #f1f1f1 25%, #fdfdfd 25%);
+    background-position: 10px 0, 10px 0, 0 0, 0 0;
+    background-size: 20px 20px;
+    background-repeat: repeat;
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 0 2px 10px #00000014;
+}
+
+
+
+.descripcion {
+    margin-top: 20px;
+}
+
+.bajada {
+    font-weight: 500;
+}
+
+/* Estilos aplicados a imágenes SVG */
+
+.iconosvg {
+    width: 75px;
+    height: 75px;
+    fill: var(--amarillo);
+    filter:
+        drop-shadow(1px 1px 0px var(--verde-bosque)) drop-shadow(2px 2px 0px var(--verde-bosque)) drop-shadow(3px 3px 0px var(--verde-bosque)) drop-shadow(4px 4px 5px #00000055);
+}
+
+.iconosvg:hover {
+    width: 75px;
+    height: 75px;
+    fill: var(--turquesa);
+    filter:
+        drop-shadow(1px 1px 0px var(--verde-bosque)) drop-shadow(2px 2px 0px var(--verde-bosque)) drop-shadow(3px 3px 0px var(--verde-bosque)) drop-shadow(4px 4px 5px #00000055);
+}
+
+
+
+.card-title {
+    background-color: var(--verde-bosque);
+    filter: drop-shadow(4px 4px 5px #00000055);
+    padding: 3px 8px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    font-family: "Raleway", Arial, Helvetica, sans-serif;
+    color: var(--amarillo);
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-shadow:
+        2px 2px 3px #07110f33;
+
+}
+
+.card {
+    border-radius: 30px;
+    /* backdrop-filter: blur(4px); */
+    background-color: #ffffff00;
+
+}
+
+
+.proyectos h1 {
+    font-family: "Anton", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-left: 60px;
+    color: var(--rosado);
+    font-size: 2rem;
+    text-shadow:
+        1px 1px 0px #083e35ff,
+        2px 2px 0px #083e35ff,
+        3px 3px 0px #083e35ff,
+        4px 4px 0px #083e35ff,
+        5px 5px 5px #07110f33;
+}
+
+.proyectos h4 {
+    font-family: "Anton", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: var(--verde-bosque);
+    font-size: 1.4rem;
+    margin-left: 60px;
+    text-shadow:
+        1px 1px 0px #74ecaaff,
+        2px 2px 0px #74ecaaff,
+        3px 3px 0px #74ecaaff;
+
+}
+
+.proyectos p {
+    font-family: "Raleway", Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #2e2e2e;
+    /* text-shadow: #dbdbdb 2px 2px 2px; */
+}
+
+
+.proyectos {
+    background-image:
+        linear-gradient(135deg, #f1f1f1 25%, transparent 25%),
+        linear-gradient(225deg, #f1f1f1 25%, transparent 25%),
+        linear-gradient(45deg, #f1f1f1 25%, transparent 25%),
+        linear-gradient(315deg, #f1f1f1 25%, #fdfdfd 25%);
+    background-position: 10px 0, 10px 0, 0 0, 0 0;
+    background-size: 20px 20px;
+    background-repeat: repeat;
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 0 2px 10px #00000014;
+}
+
+.proyectos img {
+    border-radius: 20px;
+}
+
+.proyectos .card img {
+    height: 150px;
+    object-fit: cover;
+    object-position: top;
+    width: 100%;
+    box-shadow: 0 2px 10px #00000055;
+}
+
+
+.footer {
+    background: linear-gradient(to right, #36bb72 0%, #74ecaa 50%);
+    background-color: var(--turquesa);
+    border-top: 4px solid var(--blanco);
+
+}
+
+.footer p {
+    font-family: "Raleway", Arial, Helvetica, sans-serif;
+    color: var(--verde-bosque);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.footer i {
+    color: var(--verde-bosque);
+}
+
+/* Animación de levitación para el hero */
+@keyframes levitate {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.hero-box {
+    animation: levitate 4s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+/* Animaciones del Navbar */
+.navbar-maca {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.navbar-maca a {
+    position: relative;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+        text-shadow 0.3s ease;
+}
+
+.navbar-maca a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: var(--rosado);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.navbar-maca a:hover::after {
+    width: 80%;
+}
+
+.navbar-maca a:hover {
+    transform: translateY(-3px);
+    text-shadow:
+        1px 1px 0px #fc789eff,
+        2px 2px 0px #fc789eff,
+        3px 3px 0px #fc789eff,
+        4px 4px 0px #fc789eff,
+        5px 5px 8px #07110f55;
+}
+
+/* Animaciones de iconos*/
+.iconosvg {
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: pointer;
+}
+
+.iconosvg:hover {
+    transform: translateY(-8px) rotate(5deg) scale(1.1);
+    fill: var(--rosado);
+    filter:
+        drop-shadow(1px 1px 0px var(--verde-bosque)) drop-shadow(2px 2px 0px var(--verde-bosque)) drop-shadow(3px 3px 0px var(--verde-bosque)) drop-shadow(6px 8px 10px #00000066);
+}
+
+/* Animación al hacer click */
+.iconosvg:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
+}
+
+.habilidades .col-md-3 {
+    margin-bottom: 0.5rem !important;
+}
+
+.habilidades .card-body {
+    padding: 0.75rem;
+}
+
+.habilidades .card-title {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    padding: 2px 6px;
+}
+
+.habilidades .iconosvg {
+    width: 55px;
+    height: 55px;
+}
+
+.habilidades .iconosvg:hover {
+    width: 55px;
+    height: 55px;
+}
+
+.habilidades h4.bajada {
+    padding-bottom: 1.5rem !important;
+}
+
+/* Sección de Contacto */
+.contacto-container {
+    padding: 60px 0;
+}
+
+.contacto {
+    background-image:
+        linear-gradient(135deg, #f1f1f1 25%, transparent 25%),
+        linear-gradient(225deg, #f1f1f1 25%, transparent 25%),
+        linear-gradient(45deg, #f1f1f1 25%, transparent 25%),
+        linear-gradient(315deg, #f1f1f1 25%, #fdfdfd 25%);
+    background-position: 10px 0, 10px 0, 0 0, 0 0;
+    background-size: 20px 20px;
+    background-repeat: repeat;
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 0 2px 10px #00000014;
+}
+
+.contacto h1 {
+    font-family: "Anton", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-left: 60px;
+    color: var(--rosado);
+    font-size: 2rem;
+    text-shadow:
+        1px 1px 0px #083e35ff,
+        2px 2px 0px #083e35ff,
+        3px 3px 0px #083e35ff,
+        4px 4px 0px #083e35ff,
+        5px 5px 5px #07110f33;
+}
+
+.contacto h4 {
+    font-family: "Anton", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: var(--verde-bosque);
+    font-size: 1.4rem;
+    margin-left: 60px;
+    text-shadow:
+        1px 1px 0px #74ecaaff,
+        2px 2px 0px #74ecaaff,
+        3px 3px 0px #74ecaaff;
+}
+
+.contacto-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 2rem 1rem;
+}
+
+.contacto-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--verde-bosque);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    padding: 1rem;
+    border-radius: 15px;
+}
+
+.contacto-item:hover {
+    transform: translateY(-8px);
+    color: var(--rosado);
+}
+
+.contacto-item i {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    filter: drop-shadow(3px 3px 0px var(--turquesa));
+}
+
+.contacto-item:hover i {
+    transform: scale(1.15) rotate(-5deg);
+    filter: drop-shadow(4px 4px 8px #00000044);
+}
+
+.contacto-item span {
+    font-family: "Raleway", Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* Botón para proyectos */
+.btn-proyecto {
+    background-color: var(--verde-bosque);
+    color: var(--amarillo);
+    font-family: "Raleway", Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: 2px solid var(--verde-bosque);
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 3px 3px 0px var(--turquesa);
+}
+
+.btn-proyecto:hover {
+    background-color: var(--rosado);
+    border-color: var(--rosado);
+    color: var(--blanco);
+    transform: translateY(-3px);
+    box-shadow: 5px 5px 0px var(--morado);
+}
+
+.btn-proyecto:active {
+    transform: translateY(0);
+    box-shadow: 2px 2px 0px var(--morado);
+}
+
+/* Animación para las cards de proyectos */
+.proyectos .card {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.proyectos .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px #00000033;
+}
+
+.proyectos .card img {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.proyectos .card:hover img {
+    box-shadow: 0 8px 20px #00000066;
+}
+
+
+.proyectos .card:hover .proyecto-placeholder {
+    box-shadow: 0 8px 20px #00000066;
+}
+
+/* Formulario estilo Bento Box (me encanta este estilo)*/
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .bento-grid {
+        grid-template-columns: 1.2fr 1fr;
+    }
+}
+
+.bento-form {
+    background: linear-gradient(135deg, var(--verde-bosque) 0%, #0a4a3f 100%);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 8px 25px #00000033;
+}
+
+.bento-form .form-group {
+    margin-bottom: 1.25rem;
+}
+
+.bento-form label {
+    display: block;
+    color: var(--amarillo);
+    font-family: "Raleway", Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.bento-form input,
+.bento-form textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.95);
+    font-family: "Raleway", Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    color: var(--negro);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.bento-form input:focus,
+.bento-form textarea:focus {
+    outline: none;
+    border-color: var(--turquesa);
+    box-shadow: 0 0 0 4px rgba(116, 236, 170, 0.3);
+}
+
+.bento-form input::placeholder,
+.bento-form textarea::placeholder {
+    color: #999;
+}
+
+.bento-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.btn-enviar {
+    width: 100%;
+    padding: 0.9rem 2rem;
+    background: var(--rosado);
+    color: var(--blanco);
+    border: none;
+    border-radius: 15px;
+    font-family: "Raleway", Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 4px 0 var(--morado);
+    margin-top: 0.5rem;
+}
+
+.btn-enviar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 0 var(--morado);
+    background: #fd8aa8;
+}
+
+.btn-enviar:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 var(--morado);
+}
+
+/* Bento Links - Íconos de contacto */
+.bento-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.bento-links .contacto-item {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    padding: 1.25rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    border: 2px solid transparent;
+}
+
+.bento-links .contacto-item:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-5px) scale(1.02);
+    border-color: var(--turquesa);
+    box-shadow: 0 10px 25px #00000022;
+}
+
+.bento-links .contacto-item i {
+    font-size: 2rem;
+    color: var(--verde-bosque);
+    margin-bottom: 0.5rem;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    filter: drop-shadow(2px 2px 0px var(--turquesa));
+}
+
+.bento-links .contacto-item:hover i {
+    color: var(--rosado);
+    transform: scale(1.15) rotate(-5deg);
+}
+
+.contacto-label {
+    font-family: "Anton", Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: var(--verde-bosque);
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.contacto-id {
+    font-family: "Raleway", Arial, Helvetica, sans-serif;
+    color: #555;
+    font-size: 0.8rem;
+    font-weight: 500;
+    word-break: break-all;
+}
